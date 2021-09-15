@@ -15,6 +15,8 @@ import Reports from './Reports'
 import Clients from './Clients'
 import Consultants from './Consultants'
 import Products from './Products'
+import ClientCreate from './ClientCreate'
+
 //--------------------------------------end Components
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
@@ -111,11 +113,21 @@ function App() {
 
             <Nav.Link href="#" onClick={handleSubmitnav} name="reports">Reports</Nav.Link>
 
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+            <Nav.Link href="#" onClick={handleSubmitnav} name="products">Products</Nav.Link>
+
+            <NavDropdown title="Clients" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#" onClick={handleSubmitnav} name="clients">Clients list</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#action4" onClick={handleSubmitnav} name="clientCreate">Create a new client</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">Client reports</NavDropdown.Item>
+            </NavDropdown>
+
+            <NavDropdown title="Consultants" id="navbarScrollingDropdown2">
+              <NavDropdown.Item href="#" onClick={handleSubmitnav} name="consultants">Consultants</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Consultant Reports</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">Consultant details</NavDropdown.Item>
             </NavDropdown>
             
           </Nav>
@@ -134,7 +146,8 @@ function App() {
 
 
       <div>
-        <nav>
+
+        {/* <nav> 
           <ul>
             <li>
               <Link to="/">Control panel</Link>
@@ -158,7 +171,9 @@ function App() {
               <Link to="/products">Our Products ...</Link>
             </li>
           </ul>
-        </nav>
+        </nav>*/}
+
+
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -177,6 +192,9 @@ function App() {
           </Route>
           <Route exact path="/clients">
             <Clients />
+          </Route>
+          <Route exact path="/clientCreate">
+            <ClientCreate />
           </Route>
           <Route exact path="/consultants">
             <Consultants />

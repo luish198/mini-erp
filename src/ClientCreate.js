@@ -18,21 +18,21 @@ export default function Clients() {
     console.log(clients)
 
     return (
-        <>
+        <h>
             {clients? 
             <div>
-            <h1>Clients list !</h1>
+            <h1>Create a Client !</h1>
 
              {clients.map((cli) => (
                 <ul>
-                    <li key={cli.id}>{cli.COMPANY_NAME}</li>
-                    <li key={cli.id}>{cli.MAIN_CONTACT}</li>
+                    {/* <li key={cli.id}>{cli.COMPANY_NAME}</li> */}
+                    {/* <li key={cli.id}>{cli.MAIN_CONTACT}</li> */}
                 </ul>
                     ))}
              </div>       
             
             : "Loading..."}
-        </>
+        </h>
 
     )
 }
